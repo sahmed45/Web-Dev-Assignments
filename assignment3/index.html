@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        var array = [9, 3, 4.3, 24, 54, 8, 19, 23, 46, 87, 3.14];
+
+        var out = new Array();
+
+        var index = 0;
+        for (var i = 0; i < array.length; i++) {
+
+            index = array.indexOf(23);
+
+
+        } // parsing an array
+        for (var i = 0; i < array.length; i++) {
+
+            if (array[i] > 10) {
+                out.push(array[i]);
+            }
+        } // parsing an array
+
+        window.alert(" For array " + array.toString() + "\n Index of 23 is " + index + " \n Numbers greater than 10 are " + out.toString());
+    </script>
+
+
+
+</body>
+
+</html>

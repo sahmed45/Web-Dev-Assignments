@@ -1,0 +1,102 @@
+body {
+    font-family: sans-serif;
+}
+
+.main {
+    z-index: 1;
+    background-color: rgb(245, 175, 70);
+}
+
+.list {
+    z-index: 1;
+    background-color: rgb(245, 175, 70);
+}
+
+.list a {
+    color: rgb(15, 15, 14)
+}
+
+.list a:hover {
+    color: rgb(33, 91, 156)
+}
+
+.links a {
+    color: rgb(95, 61, 9);
+}
+
+table,
+td {
+    padding: 20;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+h1 {
+    color: rgb(245, 175, 70);
+    ;
+    font: size 18;
+    text-align: center;
+    background-color: black;
+    vertical-align: top
+}
+
+h2 {
+    color: rgb(0, 0, 0);
+    ;
+    font-size: 30;
+}
+
+h2,
+p {
+    margin-left: 120px;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    font-size: 15;
+}
+
+h3,
+p {
+    margin-left: 120px;
+}
+
+div {
+    margin-left: 120px;
+}
+
+header {
+    background-color: rgb(245, 175, 70);
+    text-align: center;
+}
+
+.label {
+    display: block;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button {
+    padding-left: 35px;
+    background-color: rgb(252, 184, 13);
+    font-size: 20px;
+    Text-align: center;
+    padding: 10px;
+}
+
+select {
+    width: 200px;
+    height: 29px;
+    font-size: 18px;
+    color: Black;
+    border: 1px solid rgb(252, 184, 13);
+    ;
+}

@@ -1,0 +1,271 @@
+<title>KSU CARIT Faculty</title>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+
+<body>
+    <script type="text/javascript">
+        function studentYear() {
+            var x = document.getElementById("StudentStatus");
+            var Graduate = document.getElementById("GraduateID");
+            var Undergraduate = document.getElementById("UnderGradID");
+            var i = x.selectedIndex;
+
+            if (i == "1") {
+
+
+                Undergraduate.style.display = 'none';
+                Graduate.style.display = 'block';
+                document.getElementById("evalerror").innerHTML = "";
+
+            } else if (i == "2") {
+
+
+                Graduate.style.display = 'none';
+                Undergraduate.style.display = 'block';
+                document.getElementById("evalerror").innerHTML = "";
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        function Eval() {
+            var grade1 = document.getElementById("gradea");
+            var grade1value = grade1[grade1.selectedIndex].value;
+
+            var grade2 = document.getElementById("gradeb");
+            var grade2value = grade2[grade2.selectedIndex].value;
+
+            var grade3 = document.getElementById("gradec");
+            var grade3value = grade3[grade3.selectedIndex].value;
+
+            var grade4 = document.getElementById("graded");
+            var grade4value = grade4[grade4.selectedIndex].value;
+            if (grade1value != "9" && grade2value != "9" && grade3value != "9" && grade4value != "9") {
+                var avg = (Number(grade1value) + Number(grade2value) + Number(grade3value) + Number(grade4value)) / 4
+                if (Number(avg) > Number("3.5")) {
+                    document.getElementById("evalsuccess").innerHTML = "Your GPA is " + avg + ".<br/>Congratulations, you are elegible to Apply, follow the link" + '<a href=https://graduate.kennesaw.edu/admissions/apply/online-application.php> Application.</a>';
+                    document.getElementById("evalerror").innerHTML = "";
+                } else {
+                    document.getElementById("evalerror").innerHTML = "Your GPA is " + avg + " .<br/>Sorry, you are ineligible to apply.";
+                    document.getElementById("evalsuccess").innerHTML = "";
+                }
+            } else {
+                document.getElementById("evalerror").innerHTML = "Make sure grades are selected";
+                document.getElementById("evalsuccess").innerHTML = "";
+            }
+        }
+
+
+        function Evaluate() {
+            var status = document.getElementById("StudentStatus");
+            var statusvalue = status[status.selectedIndex].value;
+
+
+
+
+            if (status[status.selectedIndex].text == "Please Select") {
+                document.getElementById("evalerror").innerHTML = "Select Student Year."
+                document.getElementById("evalsuccess").innerHTML = "";
+                complete = "1";
+
+            } else {
+                document.getElementById("evalerror").innerHTML = "";
+                complete = "0";
+            }
+
+            if (complete == "0") {
+
+                Eval();
+            }
+
+
+        }
+    </script>
+
+
+    <header>
+        <a href="http://ccse.kennesaw.edu/it">
+            <img src="https://webstatic.kennesaw.edu/_omni/images/global/logo_mobile.png?v=1" alt="Kennesaw State University" class="center"></a>
+        <h1>
+
+            Center for Applied Research in Information Technology
+
+
+        </h1>
+    </header>
+
+    <div class="main">
+        <h2>Position Evaluation
+        </h2>
+        <div class="list">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faculty.html">About us</a></li>
+            <li><a href="links.html">Quick Links</a></li>
+            <li><a href="eval.html">Position Evaluation</a></li>
+        </div>
+        <h2>Assistant Positions</h2>
+        <h3>
+            With Summer coming, our CARIT has four open student assistant positions. To be eligible, you must have completed the required courses and meet the average grade requirement.
+
+        </h3>
+        <h2>Evaluation</h2>
+        <div id="status">
+            <table style="Padding:0px;margin:0px;">
+                <tr>
+                    <td style="border-bottom:none;">
+                        <h3>Student Year:</h3>
+                    </td>
+                    <td style="border-bottom:none;">
+                        <select id="StudentStatus" onchange="studentYear()">
+                                 <option >Select Year</option>
+                                 <option >Graduate</option>
+                                 <option >Undergraduate</option>
+                             </select>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="GraduateID" style="display: none;">
+
+            <table style="Padding:0px;margin:0px;">
+                <tr>
+                    <td style="border-bottom:none;">
+                        <label class="label">IT 5203 Advanced Web Development
+                                                
+                                    </label>
+                        <label class="label">IT 5323 Advanced Data Comm & Networking
+                                    
+                                    </label>
+                        <label class="label">IT 5423 Advanced Op Sys Concepts & Admin
+                                      
+                                    </label>
+                        <label class="label">IT 5823 AdvancedInformation Security & Admin
+                                    
+                                    </label>
+
+                    </td>
+                    <td style="border-bottom:none;">
+                        <select id="gradea">
+                                        <option value="9">Choose Grade</option>
+                                        <option value="4">A</option>
+                                        <option value="3">B</option>
+                                        <option value="2"> C</option>
+                                        <option value="1"> D</option>
+                                        <option value="0"> F</option>
+                                </select><br>
+                        <select id="gradeb">
+                                        <option value="9">Choose Grade</option>
+                                        <option value="4">A</option>
+                                        <option value="3">B</option>
+                                        <option value="2"> C</option>
+                                        <option value="1"> D</option>
+                                        <option value="0"> F</option>
+                                    </select><br>
+                        <select id="gradec">
+                                            <option value="9">Choose Grade</option>
+                                            <option value="4">A</option>
+                                            <option value="3">B</option>
+                                            <option value="2"> C</option>
+                                            <option value="1"> D</option>
+                                            <option value="0"> F</option>
+                                            </select><br>
+                        <select id="graded">
+                                                    <option value="9">Choose Grade</option>
+                                                    <option value="4">A</option>
+                                                    <option value="3">B</option>
+                                                    <option value="2"> C</option>
+                                                    <option value="1"> D</option>
+                                                    <option value="0"> F</option>
+                                                    </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="UnderGradID" style="display:none;">
+
+            <table style="Padding:0px;margin:0px;">
+                <tr>
+
+                    <td style="border-bottom:none;">
+                        <label class="label">IT 3203 Intro to Web Development
+                                                
+                                              </label>
+                        <label class="label">IT 4323 Data Comm & Networking
+                                              
+                                              </label>
+                        <label class="label">IT 3423 Op Sys Concepts & Admin
+                                                
+                                              </label>
+                        <label class="label">IT 4823 Information Security & Admin
+                                              
+                                              </label>
+
+
+                    </td>
+                    <td style="border-bottom:none;">
+                        <select id="gradea">
+                                    <option value="9">Choose Grade</option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2"> C</option>
+                                    <option value="1"> D</option>
+                                    <option value="0"> F</option>
+                            </select><br>
+                        <select id="gradeb">
+                                    <option value="9">Choose Grade</option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2"> C</option>
+                                    <option value="1"> D</option>
+                                    <option value="0"> F</option>
+                                </select><br>
+                        <select id="gradec">
+                                        <option value="9">Choose Grade</option>
+                                        <option value="4">A</option>
+                                        <option value="3">B</option>
+                                        <option value="2"> C</option>
+                                        <option value="1"> D</option>
+                                        <option value="0"> F</option>
+                                        </select><br>
+                        <select id="graded">
+                                                <option value="9">Choose Grade</option>
+                                                <option value="4">A</option>
+                                                <option value="3">B</option>
+                                                <option value="2"> C</option>
+                                                <option value="1"> D</option>
+                                                <option value="0"> F</option>
+                                                </select>
+
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </div>
+
+
+        <input type="button" class="button" id="btnevaluate" name="Evaluate" value="Evaluate" onclick="Evaluate()"> <br/>
+
+        <label id="evalerror" name="labelerror" style="font-size:25px;color:rgba(255, 0, 0, 0.815); "></label><br>
+        <label id="evalsuccess" name="labelsuccess" style="font-size:25px;color:rgb(6, 158, 6);"></label>
+    </div>
+
+
+
+</body>
